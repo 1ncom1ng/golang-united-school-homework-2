@@ -16,10 +16,16 @@ func CalcSquare(sideLen float64, sidesNum intCustomType) float64 {
 	const SidesTriangle int = 3
 	const SidesSquare int = 4
 	const SidesCircle int = 0
-	if ( sidesNum == 0 ) { square = Pi * sideLen * sideLen }
-	else if ( sidesNum == 3 )  { square = math.Sqrt(3) * sideLen * sideLen / 4 }
-		else if ( sidesNum == 4 )  { square = sideLen * sideLen }
-			else { square = 0 }
+	if ( sidesNum == 0 ) { 
+		square = Pi * sideLen * sideLen
+		} 
+		else if ( sidesNum == 3 )  { 
+			square = math.Sqrt(3) * sideLen * sideLen / 4
+		}
+			else if ( sidesNum == 4 )  {
+			square = sideLen * sideLen 
+			}
+				else { square = 0 }
 
 
 	return square
