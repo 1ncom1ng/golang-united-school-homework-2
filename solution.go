@@ -12,13 +12,13 @@ import (
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 
-func CalcSquare(sideLen float64, sidesNum intCustomType) float64 {
+func CalcSquare(sideLen float64, sidesNum int) float64 {
 	var square float64
 	const SidesTriangle int = 3
 	const SidesSquare int = 4
 	const SidesCircle int = 0
 	if sidesNum == 0 {
-		square = Pi * sideLen * sideLen
+		square = math.Pi * sideLen * sideLen
 	} else if sidesNum == 3 {
 		square = math.Sqrt(3) * sideLen * sideLen / 4
 	} else if sidesNum == 4 {
