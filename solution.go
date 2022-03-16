@@ -12,7 +12,7 @@ import (
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 
-type numberSides int;
+type numberSides int
 
 func CalcSquare(sideLen float64, sidesNum numberSides) float64 {
 	var square float64
@@ -21,7 +21,7 @@ func CalcSquare(sideLen float64, sidesNum numberSides) float64 {
 	const SidesCircle numberSides = 0
 
 	if sidesNum == SidesCircle {
-		square = Pi * sideLen * sideLen
+		square = math.Pi * sideLen * sideLen
 	} else if sidesNum == SidesTriangle {
 		square = math.Sqrt(3) * sideLen * sideLen / 4
 	} else if sidesNum == SidesSquare {
