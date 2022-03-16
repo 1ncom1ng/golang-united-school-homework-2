@@ -19,7 +19,7 @@ func CalcSquare(sideLen float64, sideNum int) float64 {
 	const SidesCircle = 0
 
 	if sideNum == 0 {
-		square = math.Pi * sideLen * sideLen
+		square = Pi * sideLen * sideLen
 	} else if sideNum == 3 {
 		square = math.Sqrt(3) * sideLen * sideLen / 4
 	} else if sideNum == 4 {
