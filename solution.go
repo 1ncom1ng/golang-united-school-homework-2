@@ -12,17 +12,19 @@ import (
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 
-func CalcSquare(sideLen float64, sideNum int) float64 {
-	var square float64
-	const SidesTriangle = 3
-	const SidesSquare = 4
-	const SidesCircle = 0
+type numberSides int;
 
-	if sideNum == 0 {
+func CalcSquare(sideLen float64, sidesNum numberSides) float64 {
+	var square float64
+	const SidesTriangle numberSides = 3
+	const SidesSquare numberSides = 4
+	const SidesCircle numberSides = 0
+
+	if sidesNum == SidesCircle {
 		square = Pi * sideLen * sideLen
-	} else if sideNum == 3 {
+	} else if sidesNum == SidesTriangle {
 		square = math.Sqrt(3) * sideLen * sideLen / 4
-	} else if sideNum == 4 {
+	} else if sidesNum == SidesSquare {
 		square = sideLen * sideLen
 	} else {
 		square = 0
