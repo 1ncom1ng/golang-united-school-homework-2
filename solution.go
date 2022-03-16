@@ -1,7 +1,15 @@
 package square
 
-import (
-	"math"
+import "math"
+
+type intCustomType int
+
+const (
+	SidesCircle intCustomType = iota
+	_
+	_
+	SidesTriangle
+	SidesSquare
 )
 
 // Define custom int type to hold sides number and update CalcSquare signature by replacing #yourTypeNameHere#
@@ -12,23 +20,15 @@ import (
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 
-type numberSides int
-
-func CalcSquare(sideLen float64, sidesNum numberSides) float64 {
-	var square float64
-	const SidesTriangle numberSides = 3
-	const SidesSquare numberSides = 4
-	const SidesCircle numberSides = 0
-
-	if sidesNum == SidesCircle {
-		square = math.Pi * sideLen * sideLen
-	} else if sidesNum == SidesTriangle {
-		square = math.Sqrt(3) * sideLen * sideLen / 4
-	} else if sidesNum == SidesSquare {
-		square = sideLen * sideLen
-	} else {
-		square = 0
+func CalcSquare(sideLen float64, sidesNum intCustomType) float64 {
+	var s float64
+	switch sidesNum {
+	case SidesCircle:
+		s = math.Pi * sideLen * sideLen
+	case SidesTriangle:
+		s = sideLen * sideLen * math.Sqrt(3) / 4
+	case SidesSquare:
+		s = sideLen * sideLen
 	}
-
-	return square
+	return s
 }
